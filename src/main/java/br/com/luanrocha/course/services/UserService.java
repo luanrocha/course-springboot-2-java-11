@@ -32,4 +32,17 @@ public class UserService {
     public void delete(Long id) {
 	repository.deleteById(id);
     }
+    
+    public User update(Long id, User obj) {
+	//getOne prepara a chamada mas nao se comunica com o db ainda (objeto monitorado jpa)
+	User entity = repository.getOne(id);
+	updateData(entity, obj);
+	return repository.save(entity);
+    }
+
+    private void updateData(User entity, User obj) {
+	entity.setName(obj.getName());
+	entity.setEmail(obj.getEmail());
+	entity.setPhone(obj.getPhone());
+    }
 }
