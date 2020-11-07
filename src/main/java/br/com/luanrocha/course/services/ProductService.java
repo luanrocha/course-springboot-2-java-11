@@ -12,16 +12,16 @@ import br.com.luanrocha.course.repositories.ProductRepository;
 @Service
 public class ProductService {
 
-    @Autowired
-    private ProductRepository repository;
+	@Autowired
+	private ProductRepository repository;
 
-    public List<Product> findAll() {
-	return repository.findAll();
-    }
+	public List<Product> findAll() {
+		return repository.findAll();
+	}
 
-    public Product findById(Long id) {
-	Optional<Product> obj = repository.findById(id);
+	public Product findById(Long id) {
+		Optional<Product> obj = repository.findById(id);
 
-	return obj.get();
-    }
+		return obj.get();
+	}
 }

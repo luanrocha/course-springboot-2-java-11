@@ -12,16 +12,16 @@ import br.com.luanrocha.course.repositories.OrderRepository;
 @Service
 public class OrderService {
 
-    @Autowired
-    private OrderRepository repository;
+	@Autowired
+	private OrderRepository repository;
 
-    public List<Order> findAll() {
-	return repository.findAll();
-    }
+	public List<Order> findAll() {
+		return repository.findAll();
+	}
 
-    public Order findById(Long id) {
-	Optional<Order> obj = repository.findById(id);
+	public Order findById(Long id) {
+		Optional<Order> obj = repository.findById(id);
 
-	return obj.get();
-    }
+		return obj.get();
+	}
 }
